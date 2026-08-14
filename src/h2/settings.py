@@ -10,7 +10,7 @@ from __future__ import annotations
 
 import collections
 import enum
-from collections.abc import Iterator, MutableMapping
+from typing import Iterator, MutableMapping, Union
 
 from hyperframe.frame import SettingsFrame
 
@@ -89,7 +89,7 @@ class ChangedSetting:
         )
 
 
-class Settings(MutableMapping[SettingCodes | int, int]):
+class Settings(MutableMapping[Union[SettingCodes, int], int]):
     """
     An object that encapsulates HTTP/2 settings state.
 

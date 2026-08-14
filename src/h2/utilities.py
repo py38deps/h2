@@ -6,8 +6,7 @@ Utility functions that do not belong in a separate module.
 """
 from __future__ import annotations
 
-import collections
-from typing import TYPE_CHECKING, Any, NamedTuple
+from typing import TYPE_CHECKING, Any, NamedTuple, OrderedDict
 
 from hpack.struct import HeaderTuple, NeverIndexedHeaderTuple
 
@@ -706,7 +705,7 @@ def validate_outbound_headers(headers: Iterable[Header],
 
 
 
-class SizeLimitDict(collections.OrderedDict[int, Any]):
+class SizeLimitDict(OrderedDict[int, Any]):
 
     def __init__(self, *args: dict[int, int], **kwargs: Any) -> None:
         self._size_limit = kwargs.pop("size_limit", None)

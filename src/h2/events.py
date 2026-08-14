@@ -11,6 +11,7 @@ H2 state machine it processes the data and returns a list of Event objects.
 from __future__ import annotations
 
 import binascii
+import sys
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Any
 
@@ -23,7 +24,10 @@ if TYPE_CHECKING:  # pragma: no cover
     from .errors import ErrorCodes
 
 
-kw_only = {"kw_only": True}
+if sys.version_info < (3, 10):  # pragma: no cover
+    kw_only: dict[str, bool] = {}
+else:  # pragma: no cover
+    kw_only = {"kw_only": True}
 
 
 _LAZY_INIT: Any = object()
