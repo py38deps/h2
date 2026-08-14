@@ -197,6 +197,17 @@ commands = [
   ["python", "-bb", "-m", "pytest", "--cov-report=xml", "--cov-report=term", "--cov=h2", { replace = "posargs", extend = true }]
 ]
 
+[tool.tox.env.py38]
+deps = [
+  "hpack @ git+https://github.com/LmeSzinc/hpack.git@master",
+  "hyperframe @ git+https://github.com/LmeSzinc/hyperframe.git@master",
+]
+
+[tool.tox.env.py39]
+deps = [
+  "hpack @ git+https://github.com/LmeSzinc/hpack.git@master",
+]
+
 [tool.tox.env.lint]
 dependency_groups = ["linting"]
 commands = [
