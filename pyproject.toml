@@ -199,13 +199,13 @@ commands = [
 
 [tool.tox.env.py38]
 deps = [
-  "hpack @ git+https://github.com/LmeSzinc/hpack.git@master",
-  "hyperframe @ git+https://github.com/LmeSzinc/hyperframe.git@master",
+  "hpack @ git+https://github.com/py38deps/hpack.git@master",
+  "hyperframe @ git+https://github.com/py38deps/hyperframe.git@master",
 ]
 
 [tool.tox.env.py39]
 deps = [
-  "hpack @ git+https://github.com/LmeSzinc/hpack.git@master",
+  "hpack @ git+https://github.com/py38deps/hpack.git@master",
 ]
 
 [tool.tox.env.lint]
