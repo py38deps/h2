@@ -197,15 +197,18 @@ commands = [
   ["python", "-bb", "-m", "pytest", "--cov-report=xml", "--cov-report=term", "--cov=h2", { replace = "posargs", extend = true }]
 ]
 
+# The hpack/hyperframe backports are published on the py38deps package index.
 [tool.tox.env.py38]
+set_env = { PIP_EXTRA_INDEX_URL = "https://py38deps.github.io/py38deps/simple/" }
 deps = [
-  "hpack @ git+https://github.com/py38deps/hpack.git@master",
-  "hyperframe @ git+https://github.com/py38deps/hyperframe.git@master",
+  "hpack",
+  "hyperframe",
 ]
 
 [tool.tox.env.py39]
+set_env = { PIP_EXTRA_INDEX_URL = "https://py38deps.github.io/py38deps/simple/" }
 deps = [
-  "hpack @ git+https://github.com/py38deps/hpack.git@master",
+  "hpack",
 ]
 
 [tool.tox.env.lint]
